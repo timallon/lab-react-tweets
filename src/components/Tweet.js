@@ -1,6 +1,7 @@
 import ProfileImage from "./ProfileImage";
 import User from "./User";
-
+import Timestamp from "./Timestamp.js";
+import Message from "./Message";
 
 
 function Tweet({tweet}) {
@@ -12,12 +13,11 @@ function Tweet({tweet}) {
       <div className="body">
         <div className="top">
           <User userData = {tweet.user} />
-          
+          <Timestamp time={tweet.timestamp} />  
 
-          <span className="timestamp">{tweet.timestamp}</span>
         </div>
 
-        <p className="message">{tweet.message}</p>
+        <Message message={tweet.message} />
 
         <div className="actions">
           {/* Font Awesome icons */}
@@ -31,6 +31,6 @@ function Tweet({tweet}) {
       <i className="fas fa-ellipsis-h"></i>
     </div>
   );
-}
+};
 
 export default Tweet;
